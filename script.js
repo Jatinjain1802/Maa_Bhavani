@@ -10,14 +10,28 @@
  */
 
 // ===== 1. PRELOADER =====
-// window.addEventListener('load') fires when ALL resources (images etc.) are loaded
-window.addEventListener('load', () => {
-    const preloader = document.getElementById('preloader');
-    // Wait 2.2 seconds (for the loading bar animation to finish), then hide
-    setTimeout(() => {
+// LEARNING: `window.load` waits for ALL images to download.
+// On slow connections (like GitHub Pages), images may take long → preloader stuck!
+// FIX: We use TWO strategies:
+//   1. Hide after `load` event + 1.5s delay (ideal case)
+//   2. Fallback: Always hide after 4s even if images haven't loaded (safety net)
+
+const preloader = document.getElementById('preloader');
+
+function hidePreloader() {
+    if (preloader && !preloader.classList.contains('hidden')) {
         preloader.classList.add('hidden');
-    }, 2200);
+    }
+}
+
+// Strategy 1: Wait for page load, then hide after animation finishes
+window.addEventListener('load', () => {
+    setTimeout(hidePreloader, 1500);
 });
+
+// Strategy 2: FALLBACK — hide after 4 seconds no matter what
+// This prevents the preloader from getting stuck if images fail to load
+setTimeout(hidePreloader, 4000);
 
 // ===== 2. PARTICLE EFFECT =====
 // Creates floating gold particles in the hero section for a premium feel
