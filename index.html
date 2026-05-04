@@ -1,620 +1,405 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Maa Bhawani Construction & Contractor | Ujjain</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --navy:#0d1b3e;
-  --navy2:#1a2d5a;
-  --gold:#c9a84c;
-  --gold2:#e8c96e;
-  --gold3:#a07828;
-  --cream:#fdf8f0;
-  --white:#fff;
-  --muted:#888;
-  --dark:#1a1a2e;
-}
-html{scroll-behavior:smooth}
-body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--dark);overflow-x:hidden}
-
-/* SCROLLBAR */
-::-webkit-scrollbar{width:6px}
-::-webkit-scrollbar-track{background:var(--navy)}
-::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px}
-
-/* NAV */
-nav{background:var(--navy);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:72px;position:sticky;top:0;z-index:1000;border-bottom:2px solid var(--gold)}
-.nav-logo{display:flex;align-items:center;gap:12px}
-.nav-logo img{height:50px;width:50px;border-radius:50%;border:2px solid var(--gold);object-fit:cover}
-.nav-brand span{display:block;font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--gold2);letter-spacing:1px}
-.nav-brand small{font-size:10px;color:#8899b5;letter-spacing:2px;text-transform:uppercase}
-.nav-links{display:flex;gap:2rem;list-style:none}
-.nav-links a{color:#b0bdd4;font-size:13px;text-decoration:none;letter-spacing:.5px;transition:color .2s}
-.nav-links a:hover{color:var(--gold2)}
-.nav-cta{background:var(--gold);color:var(--navy);padding:9px 22px;border-radius:4px;font-weight:500;font-size:14px;text-decoration:none;transition:all .2s}
-.nav-cta:hover{background:var(--gold2)}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none}
-.hamburger span{width:24px;height:2px;background:var(--gold);display:block;transition:all .3s}
-
-/* HERO */
-.hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 65%,#1e3a6e 100%);min-height:92vh;display:flex;align-items:center;padding:5rem 5%;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23c9a84c' fill-opacity='0.04'%3E%3Cpath d='M50 50v-5h-3v5h-5v3h5v5h3v-5h5v-3h-5zm0-40V5h-3v5h-5v3h5v5h3v-5h5V5h-5zM10 50v-5H7v5H2v3h5v5h3v-5h5v-3h-5zm0-40V5H7v5H2v3h5v5h3v-5h5V5h-5z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
-.hero-content{max-width:600px;position:relative;z-index:1;animation:fadeUp .8s ease}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.4);color:var(--gold2);padding:7px 18px;border-radius:20px;font-size:12px;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:1.5rem}
-.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,5vw,3.8rem);color:var(--white);line-height:1.15;margin-bottom:1.2rem}
-.hero h1 em{color:var(--gold2);font-style:normal}
-.hero p{color:#b0bdd4;font-size:1.05rem;line-height:1.85;margin-bottom:2.5rem;max-width:520px}
-.hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
-.btn-gold{background:var(--gold);color:var(--navy);padding:14px 32px;border-radius:4px;font-weight:500;font-size:15px;text-decoration:none;transition:all .2s;display:inline-flex;align-items:center;gap:8px}
-.btn-gold:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,168,76,.3)}
-.btn-ghost{background:transparent;color:var(--gold2);padding:14px 32px;border-radius:4px;font-weight:500;font-size:15px;text-decoration:none;border:1px solid rgba(201,168,76,.5);transition:all .2s;display:inline-flex;align-items:center;gap:8px}
-.btn-ghost:hover{background:rgba(201,168,76,.08);border-color:var(--gold)}
-.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:4rem;border-top:1px solid rgba(201,168,76,.2);padding-top:2.5rem}
-.stat strong{display:block;font-family:'Playfair Display',serif;font-size:2.2rem;color:var(--gold2);line-height:1}
-.stat span{font-size:12px;color:#6a7fa8;letter-spacing:1px;text-transform:uppercase;margin-top:.3rem;display:block}
-.hero-visual{position:absolute;right:5%;top:50%;transform:translateY(-50%);width:380px;height:380px;display:flex;align-items:center;justify-content:center;opacity:.12}
-.hero-visual svg{width:100%;height:100%}
-
-/* TICKER */
-.ticker{background:var(--gold);overflow:hidden;white-space:nowrap;padding:10px 0}
-.ticker-inner{display:inline-flex;animation:ticker 25s linear infinite;gap:0}
-.ticker-item{font-size:13px;font-weight:500;color:var(--navy);padding:0 2.5rem;letter-spacing:.5px}
-.ticker-dot{color:var(--navy);opacity:.5}
-@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-
-/* SECTION BASE */
-section{padding:5.5rem 5%}
-.s-label{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold3);font-weight:500;margin-bottom:.5rem}
-.s-title{font-family:'Playfair Display',serif;font-size:2.1rem;color:var(--navy);line-height:1.3;margin-bottom:.75rem}
-.s-title em{color:var(--gold3);font-style:normal}
-.s-sub{color:var(--muted);font-size:15px;line-height:1.8;max-width:580px}
-
-/* ABOUT */
-.about{background:var(--white)}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-top:3.5rem}
-.about-text p{color:#555;line-height:1.9;font-size:15px;margin-bottom:1rem}
-.checks{display:flex;flex-direction:column;gap:.65rem;margin-top:1.5rem}
-.check-item{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--dark)}
-.check-item::before{content:'';width:18px;height:18px;min-width:18px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 6l3 3 5-5' stroke='%230d1b3e' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-size:12px;background-position:center;background-repeat:no-repeat}
-.owner-card{background:var(--navy);border-radius:10px;padding:2.5rem;position:relative;overflow:hidden}
-.owner-card::before{content:'';position:absolute;top:-40px;right:-40px;width:120px;height:120px;border-radius:50%;border:2px solid rgba(201,168,76,.15)}
-.owner-card::after{content:'';position:absolute;bottom:-25px;left:-25px;width:80px;height:80px;border-radius:50%;border:2px solid rgba(201,168,76,.08)}
-.owner-avatar{width:56px;height:56px;background:rgba(201,168,76,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:22px;color:var(--gold2);margin-bottom:1.25rem;border:2px solid rgba(201,168,76,.3)}
-.owner-name{font-family:'Playfair Display',serif;font-size:1.35rem;color:var(--gold2);margin-bottom:.2rem}
-.owner-role{font-size:11px;color:#556;letter-spacing:2px;text-transform:uppercase;margin-bottom:1.5rem}
-blockquote{color:#9aaac0;font-size:14px;line-height:1.85;font-style:italic;border-left:3px solid var(--gold);padding-left:1.1rem;margin-bottom:1.75rem}
-.owner-contacts{display:flex;flex-direction:column;gap:.6rem}
-.owner-contact{color:var(--gold2);font-size:13px;display:flex;align-items:center;gap:8px}
-.icon-dot{width:7px;height:7px;background:var(--gold);border-radius:50%;flex-shrink:0}
-
-/* SERVICES */
-.services{background:var(--cream)}
-.services-header{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem;margin-bottom:3rem}
-.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem}
-.svc-card{background:var(--white);border:1px solid #e8e0d0;border-radius:8px;padding:2rem;position:relative;overflow:hidden;transition:all .3s;cursor:default}
-.svc-card:hover{transform:translateY(-5px);border-color:var(--gold);box-shadow:0 16px 40px rgba(13,27,62,.1)}
-.svc-bar{position:absolute;bottom:0;left:0;height:3px;background:var(--gold);width:0;transition:width .3s}
-.svc-card:hover .svc-bar{width:100%}
-.svc-num{font-family:'Playfair Display',serif;font-size:2.5rem;color:rgba(201,168,76,.15);font-weight:800;line-height:1;margin-bottom:.75rem}
-.svc-icon{font-size:2rem;margin-bottom:.75rem;display:block}
-.svc-name{font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--navy);margin-bottom:.6rem}
-.svc-desc{font-size:13px;color:var(--muted);line-height:1.75}
-
-/* GALLERY */
-.gallery{background:var(--navy);padding:5.5rem 5%}
-.gallery .s-label{color:var(--gold)}
-.gallery .s-title{color:var(--white)}
-.gallery .s-title em{color:var(--gold2)}
-.gallery-tabs{display:flex;gap:.75rem;margin:2rem 0;flex-wrap:wrap}
-.gtab{background:transparent;color:#6a7fa8;border:1px solid rgba(255,255,255,.1);padding:7px 20px;border-radius:20px;font-size:13px;cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif}
-.gtab.active,.gtab:hover{background:var(--gold);color:var(--navy);border-color:var(--gold)}
-.gallery-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:12px}
-.g-item{border-radius:6px;overflow:hidden;position:relative;background:#1a2d5a;cursor:pointer}
-.g-item:nth-child(1){grid-column:span 5;grid-row:span 2}
-.g-item:nth-child(2){grid-column:span 7}
-.g-item:nth-child(3){grid-column:span 4}
-.g-item:nth-child(4){grid-column:span 3}
-.g-item:nth-child(5){grid-column:span 5}
-.g-item:nth-child(6){grid-column:span 4}
-.g-item:nth-child(7){grid-column:span 3}
-.g-placeholder{width:100%;height:100%;min-height:180px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#1a2d5a,#0d1b3e);gap:.5rem;padding:1rem}
-.g-placeholder span{font-size:2rem}
-.g-placeholder p{font-size:11px;color:#556;text-align:center;letter-spacing:.5px}
-.g-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(13,27,62,.9) 0%,transparent 60%);display:flex;align-items:flex-end;padding:1rem;opacity:0;transition:opacity .3s}
-.g-item:hover .g-overlay{opacity:1}
-.g-tag{font-size:11px;color:var(--gold2);letter-spacing:1px;text-transform:uppercase}
-.gallery-note{text-align:center;margin-top:2rem;color:#445;font-size:13px;font-style:italic}
-
-/* WHY */
-.why{background:var(--white)}
-.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;margin-top:3rem}
-.why-card{padding:2rem 1.5rem;border:1px solid #e8e0d0;border-radius:8px;text-align:center;transition:all .25s}
-.why-card:hover{border-color:var(--gold);background:rgba(201,168,76,.03)}
-.why-icon{width:56px;height:56px;background:rgba(201,168,76,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin:0 auto 1rem}
-.why-title{font-weight:500;color:var(--navy);margin-bottom:.5rem;font-size:15px}
-.why-text{font-size:13px;color:var(--muted);line-height:1.75}
-
-/* PROCESS */
-.process{background:var(--cream)}
-.process-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0;margin-top:3rem;position:relative}
-.process-steps::before{content:'';position:absolute;top:28px;left:0;right:0;height:2px;background:linear-gradient(to right,var(--gold),rgba(201,168,76,.1));z-index:0}
-.step{text-align:center;padding:0 1.5rem;position:relative;z-index:1}
-.step-num{width:56px;height:56px;background:var(--white);border:2px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--gold3);font-weight:700}
-.step-title{font-weight:500;color:var(--navy);font-size:15px;margin-bottom:.5rem}
-.step-text{font-size:13px;color:var(--muted);line-height:1.7}
-
-/* TESTIMONIALS */
-.testimonials{background:var(--navy)}
-.testimonials .s-label{color:var(--gold)}
-.testimonials .s-title{color:var(--white)}
-.testimonials .s-title em{color:var(--gold2)}
-.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:3rem}
-.testi-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:8px;padding:1.75rem}
-.stars{color:var(--gold);font-size:14px;letter-spacing:2px;margin-bottom:1rem}
-.testi-text{color:#9aaac0;font-size:14px;line-height:1.85;font-style:italic;margin-bottom:1.5rem}
-.testi-author{display:flex;align-items:center;gap:10px}
-.testi-av{width:40px;height:40px;background:rgba(201,168,76,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;color:var(--gold2);font-size:16px}
-.testi-name{color:var(--gold2);font-size:14px;font-weight:500}
-.testi-loc{color:#445;font-size:12px}
-
-/* CTA BAND */
-.cta-band{background:var(--gold);padding:4rem 5%;text-align:center}
-.cta-band h2{font-family:'Playfair Display',serif;font-size:2rem;color:var(--navy);margin-bottom:.6rem}
-.cta-band p{color:rgba(13,27,62,.75);font-size:15px;margin-bottom:2rem;max-width:500px;margin-left:auto;margin-right:auto}
-.cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
-.btn-navy{background:var(--navy);color:var(--gold2);padding:14px 36px;border-radius:4px;font-size:15px;font-weight:500;text-decoration:none;transition:all .2s}
-.btn-navy:hover{background:#0a1530;transform:translateY(-2px)}
-.btn-wa{background:transparent;color:var(--navy);padding:14px 36px;border-radius:4px;font-size:15px;font-weight:500;text-decoration:none;border:2px solid rgba(13,27,62,.3);transition:all .2s}
-.btn-wa:hover{background:rgba(13,27,62,.08)}
-
-/* FOOTER */
-footer{background:#08122a;padding:4rem 5% 2rem}
-.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
-.footer-brand{display:flex;align-items:center;gap:12px;margin-bottom:1.25rem}
-.footer-brand img{height:44px;width:44px;border-radius:50%;border:2px solid rgba(201,168,76,.4);object-fit:cover}
-.footer-brand-name{font-family:'Playfair Display',serif;font-size:16px;color:var(--gold2)}
-.footer-desc{color:#445;font-size:13px;line-height:1.8;max-width:280px}
-.footer-tagline{color:rgba(201,168,76,.4);font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-top:.75rem}
-.footer-col h4{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:1.25rem}
-.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.65rem}
-.footer-col li a{color:#445;font-size:13px;text-decoration:none;transition:color .2s}
-.footer-col li a:hover{color:var(--gold2)}
-.footer-col li{color:#445;font-size:13px}
-.footer-col li span{color:var(--gold2)}
-.footer-bottom{border-top:1px solid #0f1e40;padding-top:1.75rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
-.footer-bottom p{color:#2a3a5a;font-size:12px}
-
-/* MOBILE MENU */
-.mobile-menu{display:none;flex-direction:column;gap:.75rem;background:var(--navy);padding:1.5rem 5%;border-top:1px solid rgba(201,168,76,.2)}
-.mobile-menu a{color:#b0bdd4;font-size:14px;text-decoration:none;padding:.5rem 0;border-bottom:1px solid rgba(255,255,255,.05)}
-.mobile-menu.open{display:flex}
-
-/* ANIMATIONS */
-@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-
-/* RESPONSIVE */
-@media(max-width:768px){
-  .nav-links,.nav-cta{display:none}
-  .hamburger{display:flex}
-  .about-grid{grid-template-columns:1fr}
-  .footer-grid{grid-template-columns:1fr}
-  .hero-visual{display:none}
-  .gallery-grid{grid-template-columns:1fr 1fr}
-  .g-item:nth-child(n){grid-column:span 1;grid-row:span 1}
-  .process-steps::before{display:none}
-  .hero-stats{grid-template-columns:1fr 1fr}
-}
-@media(max-width:480px){
-  .hero h1{font-size:2rem}
-  .gallery-grid{grid-template-columns:1fr}
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maa Bhawani Construction & Contractor | Ujjain's Best Building Services</title>
+    <link rel="icon" type="image/jpeg" href="logo.jpg">
+    <meta name="description" content="10+ years experience in House Construction, Tiles Work, Marble Work, and Floor Polishing in Ujjain. Quality Today, Stronger Tomorrow.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Noto+Sans+Devanagari:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <div class="nav-logo">
-    <img src="data:image/jpeg;base64,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" alt="Maa Bhawani Logo">
-    <div class="nav-brand">
-      <span>Maa Bhawani</span>
-      <small>Construction & Contractor</small>
-    </div>
-  </div>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#gallery">Gallery</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <a href="tel:+918319213539" class="nav-cta">📞 Call Now</a>
-  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#about" onclick="toggleMenu()">About Us</a>
-  <a href="#services" onclick="toggleMenu()">Services</a>
-  <a href="#gallery" onclick="toggleMenu()">Gallery</a>
-  <a href="tel:+918319213539">📞 +91 83192 13539</a>
-  <a href="https://wa.me/918319213539">💬 WhatsApp</a>
-</div>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-content">
-    <div class="hero-badge">⭐ Ujjain's Trusted Contractor Since 2015</div>
-    <h1>Building Dreams with <em>Craftsmanship</em> & Commitment</h1>
-    <p>Professional tiles, marble, Kota stone, floor polishing, aur house construction — Ujjain aur aas-paas ke areas mein expert team ke saath quality ka guarantee.</p>
-    <div class="hero-btns">
-      <a href="tel:+918319213539" class="btn-gold">📞 Free Quote Lein</a>
-      <a href="https://wa.me/918319213539?text=Namaste%2C%20mujhe%20aapki%20services%20ke%20baare%20mein%20jaanna%20hai" class="btn-ghost">💬 WhatsApp Karein</a>
-    </div>
-    <div class="hero-stats">
-      <div class="stat"><strong>500+</strong><span>Projects Done</span></div>
-      <div class="stat"><strong>10+</strong><span>Years Exp</span></div>
-      <div class="stat"><strong>100%</strong><span>Satisfaction</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- TICKER -->
-<div class="ticker">
-  <div class="ticker-inner" id="ticker">
-    <span class="ticker-item">✦ Tiles Work</span>
-    <span class="ticker-item">✦ Marble Work</span>
-    <span class="ticker-item">✦ Kota Stone</span>
-    <span class="ticker-item">✦ Floor Polishing</span>
-    <span class="ticker-item">✦ House Construction</span>
-    <span class="ticker-item">✦ Renovation Work</span>
-    <span class="ticker-item">✦ Quality Guaranteed</span>
-    <span class="ticker-item">✦ On Time Delivery</span>
-    <span class="ticker-item">✦ Best Price in Ujjain</span>
-    <span class="ticker-item">✦ Tiles Work</span>
-    <span class="ticker-item">✦ Marble Work</span>
-    <span class="ticker-item">✦ Kota Stone</span>
-    <span class="ticker-item">✦ Floor Polishing</span>
-    <span class="ticker-item">✦ House Construction</span>
-    <span class="ticker-item">✦ Renovation Work</span>
-    <span class="ticker-item">✦ Quality Guaranteed</span>
-    <span class="ticker-item">✦ On Time Delivery</span>
-    <span class="ticker-item">✦ Best Price in Ujjain</span>
-  </div>
-</div>
-
-<!-- ABOUT -->
-<section class="about" id="about">
-  <p class="s-label">Hamare Baare Mein</p>
-  <h2 class="s-title">Quality <em>Aaj</em>, Strength <em>Kal</em></h2>
-  <div class="about-grid">
-    <div class="about-text">
-      <p>Maa Bhawani Construction & Contractor Ujjain mein ek trusted naam hai — 10+ saalon ke experience ke saath hum har project ko apna maan ke karte hain. Proprietor Chainsingh Surawat ke leadership mein humari team ne 500+ successful projects complete kiye hain.</p>
-      <p>Hum sirf contractor nahi hain — hum aapka sapna banate hain. Foundation se lekar final polish tak, har kaam mein precision aur passion dono nazar aata hai.</p>
-      <div class="checks">
-        <div class="check-item">Best Quality Materials — No Compromise</div>
-        <div class="check-item">On-Time Delivery — Deadline Guarantee</div>
-        <div class="check-item">Skilled & Experienced Labour Team</div>
-        <div class="check-item">Ujjain & Nearby Areas Full Coverage</div>
-        <div class="check-item">Post-Work Support Available</div>
-      </div>
-    </div>
-    <div class="owner-card">
-      <div class="owner-avatar">C</div>
-      <p class="owner-name">Chainsingh Surawat</p>
-      <p class="owner-role">Proprietor · Maa Bhawani Contractor</p>
-      <blockquote>"Har ghar ko ek dream home banana hai humara mission — quality aur trust ke saath. Aapka satisfaction hi hamari sabse badi achievement hai."</blockquote>
-      <div class="owner-contacts">
-        <span class="owner-contact"><span class="icon-dot"></span>+91 83192 13539</span>
-        <span class="owner-contact"><span class="icon-dot"></span>Co-Owner: Kuldeep Singh Surawat</span>
-        <span class="owner-contact"><span class="icon-dot"></span>+91 79997 50019</span>
-        <span class="owner-contact"><span class="icon-dot"></span>Ujjain, Madhya Pradesh</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section class="services" id="services">
-  <div class="services-header">
-    <div>
-      <p class="s-label">Hamaari Services</p>
-      <h2 class="s-title">Kya Karte Hain <em>Hum</em></h2>
-    </div>
-    <a href="tel:+918319213539" class="btn-gold">Quote Maango →</a>
-  </div>
-  <div class="services-grid">
-    <div class="svc-card">
-      <div class="svc-bar"></div>
-      <div class="svc-num">01</div>
-      <span class="svc-icon">🏠</span>
-      <p class="svc-name">House Construction</p>
-      <p class="svc-desc">Foundation se lekar final finish tak — RCC structure, brickwork, plastering sab included. Complete turnkey solution.</p>
-    </div>
-    <div class="svc-card">
-      <div class="svc-bar"></div>
-      <div class="svc-num">02</div>
-      <span class="svc-icon">🔷</span>
-      <p class="svc-name">Tiles Work</p>
-      <p class="svc-desc">Floor, wall, bathroom, kitchen — vitrified, ceramic, designer sab types ki tiles ki perfect laying guaranteed.</p>
-    </div>
-    <div class="svc-card">
-      <div class="svc-bar"></div>
-      <div class="svc-num">03</div>
-      <span class="svc-icon">✨</span>
-      <p class="svc-name">Marble Work</p>
-      <p class="svc-desc">Premium Italian aur Indian marble — expert laying, cutting, finishing. Luxury look sirf Maa Bhawani ke saath.</p>
-    </div>
-    <div class="svc-card">
-      <div class="svc-bar"></div>
-      <div class="svc-num">04</div>
-      <span class="svc-icon">🪨</span>
-      <p class="svc-name">Kota Stone</p>
-      <p class="svc-desc">Durable aur budget-friendly Kota stone flooring — commercial aur residential dono ke liye best option.</p>
-    </div>
-    <div class="svc-card">
-      <div class="svc-bar"></div>
-      <div class="svc-num">05</div>
-      <span class="svc-icon">💎</span>
-      <p class="svc-name">Floor Polishing</p>
-      <p class="svc-desc">Diamond grinding aur crystal polishing se purane floors mein showroom jaisi shine wapas lao. Before-after guarantee.</p>
-    </div>
-    <div class="svc-card">
-      <div class="svc-bar"></div>
-      <div class="svc-num">06</div>
-      <span class="svc-icon">🔧</span>
-      <p class="svc-name">Renovation Work</p>
-      <p class="svc-desc">Purane ghar ko naya roop do — bathroom, kitchen, flooring, walls sab kuch renovate karte hain expertly.</p>
-    </div>
-  </div>
-</section>
-
-<!-- GALLERY -->
-<section class="gallery" id="gallery">
-  <p class="s-label">Hamaara Kaam</p>
-  <h2 class="s-title">Project <em>Gallery</em></h2>
-  <p class="s-sub" style="color:#6a7fa8">Hamare completed projects ki jhalak — real kaam, real quality.</p>
-  <div class="gallery-tabs">
-    <button class="gtab active">Sabhi Projects</button>
-    <button class="gtab">Floor Polishing</button>
-    <button class="gtab">Tiles Work</button>
-    <button class="gtab">Marble Work</button>
-    <button class="gtab">Construction</button>
-  </div>
-  <div class="gallery-grid">
-    <div class="g-item">
-      <div class="g-placeholder">
-        <span>💎</span>
-        <p>FLOOR POLISHING<br>Before & After</p>
-      </div>
-      <div class="g-overlay"><span class="g-tag">Floor Polishing</span></div>
-    </div>
-    <div class="g-item">
-      <div class="g-placeholder">
-        <span>🔷</span>
-        <p>TILES WORK<br>Living Room</p>
-      </div>
-      <div class="g-overlay"><span class="g-tag">Tiles Work</span></div>
-    </div>
-    <div class="g-item">
-      <div class="g-placeholder">
-        <span>✨</span>
-        <p>MARBLE WORK<br>Entrance Hall</p>
-      </div>
-      <div class="g-overlay"><span class="g-tag">Marble Work</span></div>
-    </div>
-    <div class="g-item">
-      <div class="g-placeholder">
-        <span>🪨</span>
-        <p>KOTA STONE<br>Outdoor Area</p>
-      </div>
-      <div class="g-overlay"><span class="g-tag">Kota Stone</span></div>
-    </div>
-    <div class="g-item">
-      <div class="g-placeholder">
-        <span>🏠</span>
-        <p>HOUSE CONSTRUCTION<br>Complete Project</p>
-      </div>
-      <div class="g-overlay"><span class="g-tag">Construction</span></div>
-    </div>
-    <div class="g-item">
-      <div class="g-placeholder">
-        <span>🔧</span>
-        <p>RENOVATION<br>Kitchen & Bath</p>
-      </div>
-      <div class="g-overlay"><span class="g-tag">Renovation</span></div>
-    </div>
-    <div class="g-item">
-      <div class="g-placeholder">
-        <span>💎</span>
-        <p>POLISHING<br>Commercial Space</p>
-      </div>
-      <div class="g-overlay"><span class="g-tag">Floor Polishing</span></div>
-    </div>
-  </div>
-  <p class="gallery-note">📸 Actual project photos jald hi update honge — real kaam ki asli jhalak!</p>
-</section>
-
-<!-- WHY US -->
-<section class="why">
-  <p class="s-label">Kyun Chunein Humein</p>
-  <h2 class="s-title">Hum Kyon <em>Best Hain</em></h2>
-  <div class="why-grid">
-    <div class="why-card">
-      <div class="why-icon">🏆</div>
-      <p class="why-title">Expert Team</p>
-      <p class="why-text">10+ saal ka hands-on experience — trained labourers jo apna kaam se pyaar karte hain.</p>
-    </div>
-    <div class="why-card">
-      <div class="why-icon">⏱️</div>
-      <p class="why-title">On-Time Delivery</p>
-      <p class="why-text">Deadline pe kaam complete — hum ne kabhi client ko disappoint nahi kiya.</p>
-    </div>
-    <div class="why-card">
-      <div class="why-icon">💰</div>
-      <p class="why-title">Best Price</p>
-      <p class="why-text">Market mein best rates — transparent quoting, koi hidden charges nahi.</p>
-    </div>
-    <div class="why-card">
-      <div class="why-icon">✅</div>
-      <p class="why-title">Quality Materials</p>
-      <p class="why-text">ISI marked aur branded materials ka use — longevity aur strength guaranteed.</p>
-    </div>
-    <div class="why-card">
-      <div class="why-icon">📞</div>
-      <p class="why-title">After-Service Support</p>
-      <p class="why-text">Kaam complete hone ke baad bhi hum available hain — your trust, our responsibility.</p>
-    </div>
-    <div class="why-card">
-      <div class="why-icon">📍</div>
-      <p class="why-title">Local Expertise</p>
-      <p class="why-text">Ujjain aur aas-paas ke areas ka deep knowledge — local climate ke liye best choices.</p>
-    </div>
-  </div>
-</section>
-
-<!-- PROCESS -->
-<section class="process">
-  <p class="s-label">Kaise Kaam Karte Hain</p>
-  <h2 class="s-title">Humara <em>Process</em></h2>
-  <div class="process-steps">
-    <div class="step">
-      <div class="step-num">01</div>
-      <p class="step-title">Contact Karein</p>
-      <p class="step-text">Call ya WhatsApp pe apni requirements batao — hum turant respond karte hain.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">02</div>
-      <p class="step-title">Site Visit</p>
-      <p class="step-text">Hamaari team aapke location pe aakar assessment karte hai — bilkul free.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">03</div>
-      <p class="step-title">Quote & Planning</p>
-      <p class="step-text">Detailed cost estimate aur timeline provide karte hain — koi surprise nahi.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">04</div>
-      <p class="step-title">Kaam Shuru</p>
-      <p class="step-text">Expert team apna best kaam karte hai — daily updates aapko milte hain.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">05</div>
-      <p class="step-title">Delivery & Support</p>
-      <p class="step-text">On-time handover + post-work support — aapki satisfaction hamari priority.</p>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="testimonials">
-  <p class="s-label">Client Reviews</p>
-  <h2 class="s-title">Clients Kya Kehte <em>Hain</em></h2>
-  <div class="testi-grid">
-    <div class="testi-card">
-      <div class="stars">★★★★★</div>
-      <p class="testi-text">"Floor polishing ka kaam bahut acha kiya. Purana marble bilkul naya lag raha hai. On-time kaam complete hua aur rate bhi reasonable tha."</p>
-      <div class="testi-author">
-        <div class="testi-av">R</div>
-        <div><p class="testi-name">Rajesh Sharma</p><p class="testi-loc">Freeganj, Ujjain</p></div>
-      </div>
-    </div>
-    <div class="testi-card">
-      <div class="stars">★★★★★</div>
-      <p class="testi-text">"Tiles ka kaam first class tha. Team very professional thi, ghar mein koi mess nahi chodi. Definitely recommend karunga."</p>
-      <div class="testi-author">
-        <div class="testi-av">P</div>
-        <div><p class="testi-name">Priya Patel</p><p class="testi-loc">Mahakal Nagar, Ujjain</p></div>
-      </div>
-    </div>
-    <div class="testi-card">
-      <div class="stars">★★★★★</div>
-      <p class="testi-text">"Chainsingh ji ne poore ghar ka renovation kiya. Quality materials use ki aur deadline se pehle deliver kiya. Best contractor in Ujjain!"</p>
-      <div class="testi-author">
-        <div class="testi-av">A</div>
-        <div><p class="testi-name">Amit Goyal</p><p class="testi-loc">Dewas Road, Ujjain</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA BAND -->
-<div class="cta-band" id="contact">
-  <h2>Apna Dream Home Banao Aaj!</h2>
-  <p>Free consultation ke liye abhi call karein ya WhatsApp pe message bhejein — hum 24 ghante mein respond karte hain.</p>
-  <div class="cta-btns">
-    <a href="tel:+918319213539" class="btn-navy">📞 +91 83192 13539</a>
-    <a href="https://wa.me/918319213539?text=Namaste%2C%20mujhe%20free%20quote%20chahiye" class="btn-wa">💬 WhatsApp Pe Baat Karein</a>
-  </div>
-</div>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-grid">
-    <div>
-      <div class="footer-brand">
-        <img src="data:image/jpeg;base64,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" alt="Maa Bhawani">
-        <div>
-          <p class="footer-brand-name">Maa Bhawani</p>
-          <small style="color:#445;font-size:11px;letter-spacing:1px">Construction & Contractor</small>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="loader-logo">
+            <img src="logo.jpg" alt="Maa Bhawani">
         </div>
-      </div>
-      <p class="footer-desc">Ujjain aur aas-paas ke areas mein tiles, marble, floor polishing, aur house construction ke liye Madhya Pradesh ka trusted naam.</p>
-      <p class="footer-tagline">Built on Trust · Quality in Every Detail</p>
+        <div class="loader-bar"><div class="loader-fill"></div></div>
     </div>
-    <div class="footer-col">
-      <h4>Services</h4>
-      <ul>
-        <li><a href="#services">House Construction</a></li>
-        <li><a href="#services">Tiles Work</a></li>
-        <li><a href="#services">Marble Work</a></li>
-        <li><a href="#services">Kota Stone</a></li>
-        <li><a href="#services">Floor Polishing</a></li>
-        <li><a href="#services">Renovation</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Contact</h4>
-      <ul>
-        <li><span>📞</span> <a href="tel:+918319213539">+91 83192 13539</a></li>
-        <li><span>📞</span> <a href="tel:+917999750019">+91 79997 50019</a></li>
-        <li><span>💬</span> <a href="https://wa.me/918319213539">WhatsApp</a></li>
-        <li><span>📍</span> Ujjain, Madhya Pradesh</li>
-        <li><span>🕐</span> Mon–Sat, 8am–8pm</li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>© 2025 Maa Bhawani Construction & Contractor · Ujjain · All Rights Reserved</p>
-    <p style="color:#1a2d5a">Powered by Heerova Solution</p>
-  </div>
-</footer>
 
-<script>
-function toggleMenu(){
-  var m=document.getElementById('mobileMenu');
-  m.classList.toggle('open');
-}
-// Gallery tab filter (UI only)
-document.querySelectorAll('.gtab').forEach(function(tab){
-  tab.addEventListener('click',function(){
-    document.querySelectorAll('.gtab').forEach(function(t){t.classList.remove('active')});
-    this.classList.add('active');
-  });
-});
-// Scroll-based nav highlight
-window.addEventListener('scroll',function(){
-  var nav=document.querySelector('nav');
-  if(window.scrollY>50){
-    nav.style.boxShadow='0 4px 20px rgba(0,0,0,.3)';
-  }else{
-    nav.style.boxShadow='none';
-  }
-});
-</script>
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav" id="mobileNav">
+        <div class="close-menu" onclick="toggleMenu()">&times;</div>
+        <img src="logo.jpg" alt="Maa Bhawani" style="width:80px; border-radius:50%; margin-bottom:20px;">
+        <a href="#home" onclick="toggleMenu()">Home</a>
+        <a href="#about" onclick="toggleMenu()">About</a>
+        <a href="#services" onclick="toggleMenu()">Services</a>
+        <a href="#gallery" onclick="toggleMenu()">Gallery</a>
+        <a href="#contact" onclick="toggleMenu()">Contact</a>
+        <a href="tel:+918319213539" class="btn btn-gold">📞 Call Now</a>
+    </div>
 
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container nav-content">
+            <a href="#" class="logo">
+                <img src="logo.jpg" alt="Maa Bhawani Construction" class="logo-img">
+                <span class="logo-text">MAA BHAWANI</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="tel:+918319213539" class="btn btn-gold nav-cta">📞 Call Now</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-particles" id="particles"></div>
+        <div class="container">
+            <div class="hero-content fade-up">
+                <span class="hero-badge">
+                    <span class="badge-dot"></span>
+                    Ujjain's Most Trusted Contractor — Since 2014
+                </span>
+                <h1>We Build Your <br><span>Dreams.</span></h1>
+                <p>Aapka Dream Home, Hamari Responsibility. 10+ years of excellence in Construction, Tiles, Marble & Floor Polishing across Ujjain.</p>
+                <div class="hero-btns">
+                    <a href="tel:+918319213539" class="btn btn-gold btn-glow">🏠 Free Site Visit</a>
+                    <a href="https://wa.me/918319213539?text=Namaste%2C%20mujhe%20free%20quote%20chahiye" class="btn btn-outline">💬 WhatsApp Karein</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3 class="counter" data-target="500">0</h3>
+                        <p>Projects Done</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3 class="counter" data-target="10">0</h3>
+                        <p>Years Experience</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3 class="counter" data-target="100">0</h3>
+                        <p>Satisfaction</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gold Ticker -->
+    <div class="ticker">
+        <div class="ticker-content">
+            <span>★ House Construction</span><span>★ Tiles Work</span><span>★ Marble Polishing</span>
+            <span>★ Kota Stone</span><span>★ Renovation</span><span>★ Diamond Polishing</span>
+            <span>★ House Construction</span><span>★ Tiles Work</span><span>★ Marble Polishing</span>
+            <span>★ Kota Stone</span><span>★ Renovation</span><span>★ Diamond Polishing</span>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section class="section-padding" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text fade-up">
+                    <span class="label">HAMARE BAARE MEIN</span>
+                    <h2>Trusted by 500+ Families <br>in <span>Ujjain.</span></h2>
+                    <p>Maa Bhawani Construction & Contractor pichle 10 saalo se Ujjain aur aas-paas ke ilako mein bharose ka naam hai. Hum sirf ghar nahi banate, hum aapke sapno ko haqiqat mein badalte hain.</p>
+                    <p>Chainsingh ji ke netrutva mein, hamari team har project ko ek naya mod deti hai, chahe wo luxury marble work ho ya majboot house construction.</p>
+                    <ul class="checklist">
+                        <li>Expert Supervision</li><li>On-Time Delivery</li>
+                        <li>Quality Materials</li><li>Transparent Pricing</li>
+                        <li>Local Expertise</li><li>Post-Work Support</li>
+                    </ul>
+                </div>
+                <div class="owner-card fade-up">
+                    <div class="owner-card-glow"></div>
+                    <img src="images/owner.png" alt="Chainsingh Surawat" class="owner-img">
+                    <p class="owner-quote">"Kaam aisa karo ki log kahein—ye to Maa Bhawani ka kaam hai. Quality se kabhi samjhauta nahi."</p>
+                    <div class="owner-info">
+                        <h4>Chainsingh Surawat</h4>
+                        <p>Proprietor & Master Contractor</p>
+                    </div>
+                    <div class="owner-contact">
+                        <a href="tel:+918319213539">📞 +91 83192 13539</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section-padding" id="services" style="background: #fff;">
+        <div class="container">
+            <div class="section-title fade-up">
+                <span class="label">OUR SERVICES</span>
+                <h2>Premium Solutions for <span>Every Corner.</span></h2>
+                <p>Hum provide karte hain complete end-to-end building services.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card fade-up">
+                    <div class="service-img-wrap"><img src="images/house_construction.png" alt="House Construction"></div>
+                    <span class="service-icon">🏗️</span>
+                    <h3>House Construction</h3>
+                    <p>Full turnkey solution—planning se lekar finishing tak sab hamari zimmedari.</p>
+                    <a href="https://wa.me/918319213539?text=Namaste%2C%20House%20Construction%20ke%20baare%20mein%20jaanna%20hai" class="service-link">Quote Maango →</a>
+                </div>
+                <div class="service-card fade-up">
+                    <div class="service-img-wrap"><img src="images/tiles_work.png" alt="Tiles Work"></div>
+                    <span class="service-icon">🧱</span>
+                    <h3>Tiles Work</h3>
+                    <p>Vitrified, ceramic, aur designer tiles installation with zero-gap finish.</p>
+                    <a href="https://wa.me/918319213539?text=Namaste%2C%20Tiles%20Work%20ke%20baare%20mein%20jaanna%20hai" class="service-link">Quote Maango →</a>
+                </div>
+                <div class="service-card fade-up">
+                    <div class="service-img-wrap"><img src="images/marble_work.png" alt="Marble Work"></div>
+                    <span class="service-icon">🏛️</span>
+                    <h3>Marble Work</h3>
+                    <p>Indian aur Italian marble ka luxury work jo aapke ghar ko dega rajwada look.</p>
+                    <a href="https://wa.me/918319213539?text=Namaste%2C%20Marble%20Work%20ke%20baare%20mein%20jaanna%20hai" class="service-link">Quote Maango →</a>
+                </div>
+                <div class="service-card fade-up">
+                    <div class="service-img-wrap"><img src="images/floor_polishing.png" alt="Floor Polishing"></div>
+                    <span class="service-icon">💎</span>
+                    <h3>Floor Polishing</h3>
+                    <p>Diamond grinding aur crystal polish se paiye mirror-like reflective shine.</p>
+                    <a href="https://wa.me/918319213539?text=Namaste%2C%20Floor%20Polishing%20ke%20baare%20mein%20jaanna%20hai" class="service-link">Quote Maango →</a>
+                </div>
+                <div class="service-card fade-up">
+                    <div class="service-img-wrap"><img src="images/kota_stone.png" alt="Kota Stone"></div>
+                    <span class="service-icon">🪨</span>
+                    <h3>Kota Stone</h3>
+                    <p>Courtyards aur commercial spaces ke liye sabse mazboot Kota stone flooring.</p>
+                    <a href="https://wa.me/918319213539?text=Namaste%2C%20Kota%20Stone%20ke%20baare%20mein%20jaanna%20hai" class="service-link">Quote Maango →</a>
+                </div>
+                <div class="service-card fade-up">
+                    <div class="service-img-wrap"><img src="images/renovation.png" alt="Renovation"></div>
+                    <span class="service-icon">🏡</span>
+                    <h3>Renovation</h3>
+                    <p>Purane ghar ko dijiye ek naya aur modern look hamari renovation services se.</p>
+                    <a href="https://wa.me/918319213539?text=Namaste%2C%20Renovation%20ke%20baare%20mein%20jaanna%20hai" class="service-link">Quote Maango →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before / After Comparison Slider -->
+    <section class="section-padding" style="background: var(--primary-navy);">
+        <div class="container">
+            <div class="section-title fade-up">
+                <span class="label">TRANSFORMATION</span>
+                <h2 style="color:white;">Before & <span>After.</span></h2>
+                <p style="opacity:0.7; color:white;">Slide karke dekhiye hamara kaam — Purana vs Naya!</p>
+            </div>
+            <div class="compare-grid">
+                <!-- Floor Polishing Slider -->
+                <div class="compare-slider fade-up" id="slider1">
+                    <div class="compare-label compare-label-before">BEFORE</div>
+                    <div class="compare-label compare-label-after">AFTER</div>
+                    <img src="images/floor_after.png" alt="Floor After Polishing" class="compare-img-after">
+                    <div class="compare-before" style="width: 50%;">
+                        <img src="images/floor_before.png" alt="Floor Before Polishing" class="compare-img-before">
+                    </div>
+                    <div class="compare-handle" style="left: 50%;">
+                        <div class="handle-line"></div>
+                        <div class="handle-circle">
+                            <span>◄ ►</span>
+                        </div>
+                        <div class="handle-line"></div>
+                    </div>
+                </div>
+
+                <!-- Renovation Slider -->
+                <div class="compare-slider fade-up" id="slider2">
+                    <div class="compare-label compare-label-before">BEFORE</div>
+                    <div class="compare-label compare-label-after">AFTER</div>
+                    <img src="images/reno_after.png" alt="Kitchen After Renovation" class="compare-img-after">
+                    <div class="compare-before" style="width: 50%;">
+                        <img src="images/reno_before.png" alt="Kitchen Before Renovation" class="compare-img-before">
+                    </div>
+                    <div class="compare-handle" style="left: 50%;">
+                        <div class="handle-line"></div>
+                        <div class="handle-circle">
+                            <span>◄ ►</span>
+                        </div>
+                        <div class="handle-line"></div>
+                    </div>
+                </div>
+            </div>
+            <p class="compare-caption fade-up">💎 Floor Polishing &nbsp;&nbsp;|&nbsp;&nbsp; 🏡 Kitchen Renovation</p>
+        </div>
+    </section>
+
+    <!-- Project Gallery -->
+    <section class="section-padding" id="gallery" style="background: var(--primary-navy);">
+        <div class="container">
+            <div class="section-title fade-up">
+                <span class="label">PORTFOLIO</span>
+                <h2 style="color:white;">Real Work, <span>Real Results.</span></h2>
+                <p style="opacity:0.7; color:white;">Dekhiye hamare kuch haal hi mein complete kiye gaye projects.</p>
+            </div>
+            <div class="gallery-filters fade-up">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="construction">Construction</button>
+                <button class="filter-btn" data-filter="tiles">Tiles & Marble</button>
+                <button class="filter-btn" data-filter="polishing">Floor Polishing</button>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item fade-up" data-category="construction">
+                    <img src="images/house_construction.png" alt="House Construction Ujjain">
+                    <div class="gallery-overlay"><h4>Modern Villa Construction</h4><p>Nanakheda, Ujjain</p></div>
+                </div>
+                <div class="gallery-item fade-up" data-category="tiles">
+                    <img src="images/marble_work.png" alt="Marble Work">
+                    <div class="gallery-overlay"><h4>Luxury Italian Marble</h4><p>Freeganj, Ujjain</p></div>
+                </div>
+                <div class="gallery-item fade-up" data-category="polishing">
+                    <img src="images/floor_polishing.png" alt="Floor Polishing">
+                    <div class="gallery-overlay"><h4>Mirror Finish Polishing</h4><p>Dewas Road</p></div>
+                </div>
+                <div class="gallery-item fade-up" data-category="tiles">
+                    <img src="images/tiles_work.png" alt="Tiles Installation">
+                    <div class="gallery-overlay"><h4>Designer Tiles Work</h4><p>Mahakal Nagar</p></div>
+                </div>
+                <div class="gallery-item fade-up" data-category="construction">
+                    <img src="images/renovation.png" alt="Home Renovation">
+                    <div class="gallery-overlay"><h4>Full Home Renovation</h4><p>Sethi Nagar</p></div>
+                </div>
+                <div class="gallery-item fade-up" data-category="polishing">
+                    <img src="images/kota_stone.png" alt="Kota Stone Work">
+                    <div class="gallery-overlay"><h4>Commercial Kota Flooring</h4><p>Industrial Area, Ujjain</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-title fade-up">
+                <span class="label">WHY US</span>
+                <h2>Why Choose <span>Maa Bhawani?</span></h2>
+            </div>
+            <div class="why-grid">
+                <div class="why-card fade-up"><span class="why-icon">👷</span><div class="why-content"><h4>Expert Team</h4><p>Hamari team mein hain experienced karigar jo detail pe dhyan dete hain.</p></div></div>
+                <div class="why-card fade-up"><span class="why-icon">⏰</span><div class="why-content"><h4>On-Time Delivery</h4><p>Commitment matlab commitment. Kaam hamesha deadline se pehle complete.</p></div></div>
+                <div class="why-card fade-up"><span class="why-icon">💰</span><div class="why-content"><h4>Best Price</h4><p>No hidden charges. Ujjain market mein sabse transparent aur fair pricing.</p></div></div>
+                <div class="why-card fade-up"><span class="why-icon">🛡️</span><div class="why-content"><h4>Quality Material</h4><p>Sirf branded aur certified materials ka hi upyog karte hain hum.</p></div></div>
+                <div class="why-card fade-up"><span class="why-icon">🤝</span><div class="why-content"><h4>After Service</h4><p>Kaam khatam hone ke baad bhi hum aapke saath hain. Full support guaranteed.</p></div></div>
+                <div class="why-card fade-up"><span class="why-icon">📍</span><div class="why-content"><h4>Local Expertise</h4><p>Ujjain ki mitti ko jaante hain hum. Local climate ke hisaab se best solutions.</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Process -->
+    <section class="section-padding" style="background: var(--bg-cream);">
+        <div class="container">
+            <div class="section-title fade-up">
+                <span class="label">HOW WE WORK</span>
+                <h2>Our <span>Simple Process.</span></h2>
+                <p>Kaam shuru karne se khatam karne tak ka asaan tarika.</p>
+            </div>
+            <div class="process-timeline fade-up">
+                <div class="process-step"><div class="step-number">1</div><h4>Contact</h4><p>Call karein ya WhatsApp msg bhejein.</p></div>
+                <div class="process-step"><div class="step-number">2</div><h4>Site Visit</h4><p>Hum aayenge jagah dekhne aur naap lene.</p></div>
+                <div class="process-step"><div class="step-number">3</div><h4>Quotation</h4><p>Best aur transparent rate ka estimate.</p></div>
+                <div class="process-step"><div class="step-number">4</div><h4>Work</h4><p>Professional team kaam shuru karegi.</p></div>
+                <div class="process-step"><div class="step-number">5</div><h4>Delivery</h4><p>Quality check ke baad handover.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section-padding" id="testimonials" style="background: var(--primary-navy); color: white;">
+        <div class="container">
+            <div class="section-title fade-up">
+                <h2 style="color: white;">What Our <span>Clients Say.</span></h2>
+                <p style="opacity: 0.7; color:white;">Ujjain ke logo ka Maa Bhawani par bharosa.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-up">
+                    <div class="stars">★★★★★</div>
+                    <p>"Chainsingh ji ne hamare ghar ka marble work itna sundar kiya hai ki sab puchte hain. Finishing ekdum mirror jaisi hai!"</p>
+                    <div class="client-info"><div><h5>Rajesh Sharma</h5><span>Freeganj, Ujjain</span></div></div>
+                </div>
+                <div class="testimonial-card fade-up">
+                    <div class="stars">★★★★★</div>
+                    <p>"Naye ghar ki tiles ke liye humne Maa Bhawani ko chuna aur ye hamara best decision tha. Kaam bahut safai se hua."</p>
+                    <div class="client-info"><div><h5>Amit Jain</h5><span>Nanakheda</span></div></div>
+                </div>
+                <div class="testimonial-card fade-up">
+                    <div class="stars">★★★★★</div>
+                    <p>"Pura ghar ka construction inhi se karwaya. Time par delivery mili aur quality me koi kami nahi hai. Highly recommended!"</p>
+                    <div class="client-info"><div><h5>Sanjay Patidar</h5><span>Dewas Road</span></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Band -->
+    <section class="cta-band section-padding" id="contact">
+        <div class="container fade-up" style="text-align:center;">
+            <h2>Apna Dream Home Banao Aaj!</h2>
+            <p>Free site visit aur estimate ke liye abhi call karein ya WhatsApp karein.</p>
+            <div class="cta-btns">
+                <a href="tel:+918319213539" class="btn btn-gold btn-glow" style="background:var(--primary-navy);color:white;">📞 Call Now</a>
+                <a href="https://wa.me/918319213539?text=Namaste%2C%20mujhe%20free%20quote%20chahiye" class="btn btn-outline" style="border-color:var(--primary-navy);color:var(--primary-navy);">💬 WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="logo.jpg" alt="Maa Bhawani" class="footer-logo">
+                    <p>Built on Trust · Quality in Every Detail.<br>Ujjain's premier construction & flooring expert.</p>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul><li><a href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#services">Services</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#contact">Contact</a></li></ul>
+                </div>
+                <div>
+                    <h4>Services</h4>
+                    <ul><li>House Construction</li><li>Tiles Work</li><li>Marble Work</li><li>Floor Polishing</li><li>Kota Stone</li><li>Renovation</li></ul>
+                </div>
+                <div>
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li>📍 Ujjain, Madhya Pradesh</li>
+                        <li><a href="tel:+918319213539">📞 +91 83192 13539</a></li>
+                        <li><a href="tel:+917999750019">📞 +91 79997 50019</a></li>
+                        <li><a href="https://instagram.com/maa_bhawani_contractor" target="_blank">📱 @maa_bhawani_contractor</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Maa Bhawani Construction & Contractor. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-overlay"></div>
+        <button class="lightbox-close" id="lightboxClose">&times;</button>
+        <button class="lightbox-prev" id="lightboxPrev">&#10094;</button>
+        <button class="lightbox-next" id="lightboxNext">&#10095;</button>
+        <div class="lightbox-content">
+            <img src="" alt="" id="lightboxImg">
+            <div class="lightbox-caption">
+                <h4 id="lightboxTitle"></h4>
+                <p id="lightboxLocation"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/918319213539?text=Namaste%2C%20mujhe%20aapki%20services%20ke%20baare%20mein%20jaanna%20hai" class="floating-wa" id="floatingWa">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+    <script src="script.js"></script>
 </body>
 </html>
